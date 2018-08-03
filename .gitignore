@@ -13,4 +13,4 @@ dist
 # IDE
 .idea
 
-dev.js
+server/config/dev.js

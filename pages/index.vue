@@ -6,7 +6,7 @@
         mevn-stack-nuxt-starter
       </h1>
       <h2 class="subtitle">
-        My laudable Nuxt.js project
+        A MEVn starter using Nuxt, Google OAuth and Stripe
       </h2>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
