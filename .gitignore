@@ -9,8 +9,3 @@ npm-debug.log
 
 # Nuxt generate
 dist
-
-# IDE
-.idea
-
-server/config/dev.js
