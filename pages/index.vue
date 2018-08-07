@@ -1,7 +1,7 @@
 <template>
   <v-content fluid>
       <section>
-        <v-parallax src="https://vuetifyjs.com/themes/parallax-starter/assets/hero.jpeg" height="600">
+        <v-parallax src="https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1950&q=80" height="600">
           <v-layout row wrap>
             <v-flex xs12 text-xs-center mt-5>
               <h1>Welcome to MEVN stack starter</h1>
@@ -90,7 +90,7 @@
       </section>
 
       <section>
-        <v-parallax src="https://vuetifyjs.com/themes/parallax-starter/assets/section.jpeg" height="380">
+        <v-parallax src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0618f0cd1a33e58f5eddb4463e97d8b8&auto=format&fit=crop&w=2089&q=80" height="380">
           <v-layout column align-center justify-center>
             <div class="headline white--text mb-3 text-xs-center">Web development has never been easier</div>
             <em>Kick-start your application today</em>
