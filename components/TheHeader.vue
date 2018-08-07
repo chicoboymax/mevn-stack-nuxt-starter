@@ -8,9 +8,9 @@
       <v-list>
         <v-list-tile
           router
-          :to="item.to"
-          :key="i"
           v-for="item in menuItems"
+          :key="item.title"
+          :to="item.path"
           exact
         >
           <v-list-tile-action>
