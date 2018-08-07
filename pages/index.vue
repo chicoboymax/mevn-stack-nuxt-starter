@@ -2,7 +2,7 @@
   <content>
     <section>
       <v-parallax
-        src="https://images.unsplash.com/photo-1508267198963-68450fe8ff86?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4efb0301160aed81f84b6d991c402f6c&auto=format&fit=crop&w=1950&q=80"
+        src="/images/parralax1.jpeg"
         height="600">
         <v-layout row wrap>
           <v-flex xs12 text-xs-center mt-5>
@@ -135,7 +135,7 @@
               </v-card-text>
               <v-list class="transparent"
                       v-for="item in items"
-                      :key="title"
+                      :key="item.icon"
                       color="white"
                       flat
                       round>
