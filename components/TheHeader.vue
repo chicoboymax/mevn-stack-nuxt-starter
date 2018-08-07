@@ -1,9 +1,5 @@
 <template>
   <v-toolbar app>
-      <span class="hidden-sm-and-up">
-        <v-toolbar-side-icon @click="sidebar = !sidebar">
-        </v-toolbar-side-icon>
-      </span>
     <v-toolbar-title>
       <router-link to="/" tag="span" style="cursor: pointer">
         {{ appTitle }}
@@ -16,7 +12,7 @@
         v-for="item in menuItems"
         :key="item.title"
         :to="item.path">
-        <v-icon left>{{ item.icon }}</v-icon>
+        <v-icon left light>{{ item.icon }}</v-icon>
         {{ item.title }}
       </v-btn>
     </v-toolbar-items>
@@ -31,6 +27,8 @@
         appTitle: 'MEVN stack starter',
         menuItems: [
           {title: 'Home', path: '/', icon: 'home'},
+          {title: 'About', path: '/about', icon: 'group'},
+          {title: 'Contact', path: '/contact', icon: 'mail'},
           {title: 'Sign Up', path: '/signup', icon: 'face'},
           {title: 'Sign In', path: '/signin', icon: 'lock_open'}
         ]
