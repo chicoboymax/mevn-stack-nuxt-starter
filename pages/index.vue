@@ -1,5 +1,5 @@
 <template>
-  <v-content fluid>
+  <content>
     <section>
       <v-parallax
         src="https://images.unsplash.com/photo-1508267198963-68450fe8ff86?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4efb0301160aed81f84b6d991c402f6c&auto=format&fit=crop&w=1950&q=80"
@@ -133,31 +133,23 @@
               <v-card-text>
                 Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
               </v-card-text>
-              <v-list class="transparent">
-                <v-list-tile>
+              <v-list class="transparent"
+                      v-for="item in items"
+                      :key="title"
+                      color="white"
+                      flat
+                      round>
+                <v-list-tile
+
+                >
                   <v-list-tile-action>
-                    <v-icon class="blue--text text--lighten-2">phone</v-icon>
+                    <v-icon class="blue--text text--lighten-2">{{item.icon}}</v-icon>
                   </v-list-tile-action>
                   <v-list-tile-content>
-                    <v-list-tile-title>999-999-9999</v-list-tile-title>
+                    <v-list-tile-title>{{item.value}}</v-list-tile-title>
                   </v-list-tile-content>
                 </v-list-tile>
-                <v-list-tile>
-                  <v-list-tile-action>
-                    <v-icon class="blue--text text--lighten-2">place</v-icon>
-                  </v-list-tile-action>
-                  <v-list-tile-content>
-                    <v-list-tile-title>Québec, CA</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile>
-                  <v-list-tile-action>
-                    <v-icon class="blue--text text--lighten-2">email</v-icon>
-                  </v-list-tile-action>
-                  <v-list-tile-content>
-                    <v-list-tile-title>maxime@mnemwall.com</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
+
               </v-list>
             </v-card>
           </v-flex>
@@ -166,43 +158,20 @@
     </section>
 
 
-    <v-footer
-      height="auto"
-      color="primary lighten-1"
-    >
-      <v-layout
-        justify-center
-        row
-        wrap
-      >
-        <v-btn
-          v-for="link in links"
-          :key="link"
-          color="white"
-          flat
-          round
-        >
-          {{ link }}
-        </v-btn>
-        <v-flex
-          primary
-          lighten-2
-          py-3
-          text-xs-center
-          white--text
-          xs12
-        >
-          <div class="white--text ml-3">
-            Made by
-
-            <a class="white--text" href="https://github.com/chicoboymax" target="_blank">Maxime Drouin</a>
-          </div>
-        </v-flex>
-      </v-layout>
-    </v-footer>
-  </v-content>
+  </content>
 </template>
 
 <script>
-  export default {}
+  export default {
+
+    data () {
+      return {
+        items: [
+          {icon: 'phone', value: '999-999-9999'},
+          {icon: 'place', value: 'Québec, QC, Canada'},
+          {icon: 'email', value: 'chicoboymax@gmail.com'}
+        ]
+      }
+    }
+  }
 </script>
