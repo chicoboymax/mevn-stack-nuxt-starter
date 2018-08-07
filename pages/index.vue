@@ -2,7 +2,7 @@
   <content>
     <section>
       <v-parallax
-        src="/images/parralax1.jpeg"
+        src="/images/parallax1.jpg"
         height="600">
         <v-layout row wrap>
           <v-flex xs12 text-xs-center mt-5>
@@ -10,8 +10,8 @@
           </v-flex>
           <v-flex xs12 sm6 offset-sm3 mt-3>
             <blockquote class="blockquote text-xs-center">
-              It's a basic Single Page application <br>
-              using Google OAuth, Express, Mongo, Nuxt
+              A starter single page application <br>
+              using Google OAuth, Express, Mongo, Nuxt.
             </blockquote>
           </v-flex>
           <v-flex xs12 sm6 offset-sm3 mt-3 class="text-xs-center" mt-5>
@@ -93,7 +93,7 @@
 
     <section>
       <v-parallax
-        src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0618f0cd1a33e58f5eddb4463e97d8b8&auto=format&fit=crop&w=2089&q=80"
+        src="/images/parallax2.jpg"
         height="380">
         <v-layout column align-center justify-center>
           <div class="headline white--text mb-3 text-xs-center">Web development has never been easier</div>
