@@ -10,11 +10,11 @@
     >
       <v-btn
         v-for="link in links"
-        :key="link"
+        :key="link.title"
         color="white"
         flat
         round
-        :to="link.uri"
+        :to="link.path"
       >
         {{ link.title }}
       </v-btn>
@@ -42,9 +42,11 @@
     data () {
       return {
         links: [
-          {title: 'Home', uri: '/'},
-          {title: 'Sign Up', uri: '/signup'},
-          {title: 'Sign In', uri: '/signin'}
+          {title: 'Home', path: '/'},
+          {title: 'About', path: '/about'},
+          {title: 'Contact', path: '/contact'},
+          {title: 'Sign Up', path: '/signup'},
+          {title: 'Sign In', path: '/signin'}
         ]
       }
     }

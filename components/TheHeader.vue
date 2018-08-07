@@ -26,6 +26,7 @@
       <v-toolbar-title>
         <v-toolbar-side-icon @click="drawer = !drawer"
                              class="hidden-sm-and-up"></v-toolbar-side-icon>
+        <v-icon color="blue">whatshot</v-icon>
         <router-link to="/" tag="span" style="cursor: pointer">
           {{ appTitle }}
         </router-link>
