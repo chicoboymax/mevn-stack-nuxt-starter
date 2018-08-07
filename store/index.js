@@ -1,9 +1,17 @@
 export const state = () => ({
-  sidebar: false
+  authUser: null
 })
 
 export const mutations = {
-  toggleSidebar (state) {
-    state.sidebar = !state.sidebar
+  SET_USER: function (state, user) {
+    state.authUser = user
+  }
+}
+
+export const actions = {
+  nuxtServerInit ({ commit }, { req }) {
+    if (req.session && req.user) {
+      commit('SET_USER', req.user)
+    }
   }
 }
