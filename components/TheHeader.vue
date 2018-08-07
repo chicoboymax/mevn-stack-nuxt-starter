@@ -38,7 +38,7 @@
           v-for="item in menuItems"
           :key="item.title"
           :to="item.path">
-          <v-icon left light>{{ item.icon }}</v-icon>
+          <v-icon left color="blue">{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
       </v-toolbar-items>
