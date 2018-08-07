@@ -1,5 +1,6 @@
 <template>
   <v-toolbar app>
+    <v-toolbar-side-icon class="hidden-sm-and-up"></v-toolbar-side-icon>
     <v-toolbar-title>
       <router-link to="/" tag="span" style="cursor: pointer">
         {{ appTitle }}
