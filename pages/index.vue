@@ -2,7 +2,7 @@
   <content>
     <section>
       <v-parallax
-        src="/images/parallax1.jpg"
+        src="/images/parallax1.jpeg"
         height="600">
         <v-layout row wrap>
           <v-flex xs12 text-xs-center mt-5>
