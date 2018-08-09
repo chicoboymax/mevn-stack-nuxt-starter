@@ -2,7 +2,7 @@
   <v-app>
     <TheHeader/>
     <v-content>
-      <router-view></router-view>
+      <nuxt />
     </v-content>
     <TheFooter/>
   </v-app>
