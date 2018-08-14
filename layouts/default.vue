@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <TheHeader/>
+    <TheHeader app></TheHeader>
     <v-content>
-      <nuxt />
+      <nuxt/>
     </v-content>
-    <TheFooter/>
+    <TheFooter app></TheFooter>
   </v-app>
 </template>
 

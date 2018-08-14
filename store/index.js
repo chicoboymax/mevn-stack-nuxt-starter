@@ -9,9 +9,10 @@ export const mutations = {
 }
 
 export const actions = {
-  nuxtServerInit ({ commit }, { req }) {
-    if (req.session && req.user) {
-      commit('SET_USER', req.user)
-    }
+  nuxtServerInit ({commit}, {req}) {
+    this.$axios.get('/api/current_user').then((res) => {
+      console.log(res.data)
+    })
   }
+
 }
