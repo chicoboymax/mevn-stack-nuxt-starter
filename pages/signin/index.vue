@@ -31,7 +31,20 @@
                 required></v-text-field>
             </v-flex>
             <v-flex class="text-xs-center" mt-5>
-              <v-btn color="primary" type="submit">Sign In</v-btn>
+              <v-btn color="primary" type="submit" large>Sign In</v-btn>
+
+
+            </v-flex>
+            <v-flex class="text-xs-center" mt-5>
+
+              <v-btn
+                color="red"
+                class="white--text"
+                large
+              >
+                Sign in with Google
+                <v-icon right dark>phone</v-icon>
+              </v-btn>
             </v-flex>
           </v-layout>
         </form>
@@ -51,7 +64,7 @@
     },
     methods: {
       userSignIn () {
-        this.$store.dispatch('userSignIn', { email: this.email, password: this.password })
+        this.$store.dispatch('userSignIn', {email: this.email, password: this.password})
       }
     },
     computed: {

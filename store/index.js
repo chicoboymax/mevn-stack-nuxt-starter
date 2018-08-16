@@ -9,10 +9,9 @@ export const mutations = {
 }
 
 export const actions = {
-  nuxtServerInit ({commit}, {req}) {
-    this.$axios.get('/api/current_user').then((res) => {
-      console.log(res.data)
-    })
+  async nuxtServerInit ({commit}, {req}) {
+    const res = await this.$axios.get('/api/current_user')
+    console.log(res.data)
   }
 
 }
