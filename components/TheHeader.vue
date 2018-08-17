@@ -41,6 +41,15 @@
           <v-icon left color="blue">{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
+        <v-btn
+          v-if="!user"
+          flat
+          v-for="item in loginMenuItems"
+          :key="item.title"
+          :to="item.path">
+          <v-icon left color="blue">{{ item.icon }}</v-icon>
+          {{ item.title }}
+        </v-btn>
       </v-toolbar-items>
     </v-toolbar>
   </div>
@@ -56,12 +65,16 @@
         menuItems: [
           {title: 'Home', path: '/', icon: 'home'},
           {title: 'About', path: '/about', icon: 'group'},
-          {title: 'Contact', path: '/contact', icon: 'mail'},
+          {title: 'Contact', path: '/contact', icon: 'mail'}
+        ],
+        loginMenuItems: [
           {title: 'Sign Up', path: '/signup', icon: 'face'},
           {title: 'Sign In', path: '/signin', icon: 'lock_open'}
-        ]
+        ],
+        user: this.$store.getters.isAuth
       }
     }
+
   }
 </script>
 

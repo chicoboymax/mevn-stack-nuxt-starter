@@ -1,17 +1,23 @@
 export const state = () => ({
-  authUser: null
+  user: null
 })
 
+export const getters = {
+  isAuth: state => state.user
+}
+
 export const mutations = {
-  SET_USER: function (state, user) {
-    state.authUser = user
+  SET_USER: function ({user}, payload) {
+    user = payload
   }
 }
 
 export const actions = {
-  async nuxtServerInit ({commit}, {req}) {
+  async nuxtServerInit ({commit}) {
     const res = await this.$axios.get('/api/current_user')
-    console.log(res.data)
+    if (res.data) {
+      commit('SET_USER', res.data)
+    }
   }
 
 }
