@@ -1,23 +1,23 @@
 export const state = () => ({
-  user: null
+  authUser: null
 })
 
-export const getters = {
-  isAuth: state => state.user
-}
-
+/* eslint no-shadow: ["error", { "allow": ["state"] }] */
+/* eslint no-param-reassign: 0 */
 export const mutations = {
-  SET_USER: function ({user}, payload) {
-    user = payload
+  SET_USER(state, authUser) {
+    state.authUser = authUser
   }
 }
 
 export const actions = {
-  async nuxtServerInit ({commit}) {
-    const res = await this.$axios.get('/api/current_user')
-    if (res.data) {
-      commit('SET_USER', res.data)
-    }
-  }
+  async nuxtServerInit({ commit }) {
+    const res = await this.$axios.get("/api/current_user")
+    commit("SET_USER", res.data)
+  },
 
+  async logout({ commit }) {
+    const { data } = await this.$axios.get("/api/logout")
+    if (data.ok) commit("SET_USER", null)
+  }
 }

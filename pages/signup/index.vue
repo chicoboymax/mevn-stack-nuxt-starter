@@ -8,41 +8,41 @@
         <form @submit.prevent="userSignUp">
           <v-layout column>
             <v-flex>
-              <v-alert type="error" dismissible v-model="alert">
+              <v-alert v-model="alert" type="error" dismissible>
                 {{ error }}
               </v-alert>
             </v-flex>
             <v-flex>
               <v-text-field
+                id="email"
+                v-model="email"
                 name="email"
                 label="Email"
-                id="email"
                 type="email"
-                v-model="email"
-                required></v-text-field>
+                required/>
             </v-flex>
             <v-flex>
               <v-text-field
+                id="password"
+                v-model="password"
                 name="password"
                 label="Password"
-                id="password"
                 type="password"
-                v-model="password"
-                required></v-text-field>
+                required/>
             </v-flex>
             <v-flex>
               <v-text-field
-                name="confirmPassword"
-                label="Confirm Password"
                 id="confirmPassword"
-                type="password"
-                required
                 v-model="passwordConfirm"
                 :rules="[comparePasswords]"
-              ></v-text-field>
+                name="confirmPassword"
+                label="Confirm Password"
+                type="password"
+                required
+              />
             </v-flex>
             <v-flex class="text-xs-center" mt-5>
-              <v-btn color="primary" type="submit" :disabled="loading">Sign Up</v-btn>
+              <v-btn :disabled="loading" color="primary" type="submit">Sign Up</v-btn>
             </v-flex>
           </v-layout>
         </form>
@@ -52,45 +52,50 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        email: '',
-        password: '',
-        passwordConfirm: '',
-        alert: false
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+      passwordConfirm: "",
+      alert: false
+    }
+  },
+  computed: {
+    comparePasswords() {
+      return this.password === this.passwordConfirm
+        ? true
+        : "Passwords don't match"
+    },
+    error() {
+      return this.$store.state.error
+    },
+    loading() {
+      return this.$store.state.loading
+    }
+  },
+  watch: {
+    error(value) {
+      if (value) {
+        this.alert = true
       }
     },
-    computed: {
-      comparePasswords () {
-        return this.password === this.passwordConfirm ? true : 'Passwords don\'t match'
-      },
-      error () {
-        return this.$store.state.error
-      },
-      loading () {
-        return this.$store.state.loading
-      }
-    },
-    methods: {
-      userSignUp () {
-        if (this.comparePasswords !== true) {
-          return
-        }
-        this.$store.dispatch('userSignUp', { email: this.email, password: this.password })
-      }
-    },
-    watch: {
-      error (value) {
-        if (value) {
-          this.alert = true
-        }
-      },
-      alert (value) {
-        if (!value) {
-          this.$store.commit('setError', null)
-        }
+    alert(value) {
+      if (!value) {
+        this.$store.commit("setError", null)
       }
     }
+  },
+  methods: {
+    userSignUp() {
+      if (this.comparePasswords !== true) {
+        return
+      }
+      this.$store.dispatch("userSignUp", {
+        email: this.email,
+        password: this.password
+      })
+    }
   }
+}
 </script>

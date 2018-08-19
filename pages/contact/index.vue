@@ -14,7 +14,7 @@
             required
             @input="$v.name.$touch()"
             @blur="$v.name.$touch()"
-          ></v-text-field>
+          />
           <v-text-field
             v-model="email"
             :error-messages="emailErrors"
@@ -22,14 +22,14 @@
             required
             @input="$v.email.$touch()"
             @blur="$v.email.$touch()"
-          ></v-text-field>
+          />
           <v-textarea
             v-model="message"
             label="Message"
             auto-grow
             @input="$v.message.$touch()"
             @blur="$v.message.$touch()"
-          ></v-textarea>
+          />
 
 
           <v-btn @click="submit">submit</v-btn>
@@ -41,5 +41,5 @@
 </template>
 
 <script>
-  export default {}
+export default {}
 </script>

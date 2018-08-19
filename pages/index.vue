@@ -33,8 +33,8 @@
           <div class="text-xs-center">
             <h2 class="headline">The best way to start developing</h2>
             <span class="subheading">
-                Cras facilisis mi vitae nunc
-              </span>
+              Cras facilisis mi vitae nunc
+            </span>
           </div>
         </v-flex>
         <v-flex xs12>
@@ -133,9 +133,9 @@
               <v-card-text>
                 Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
               </v-card-text>
-              <v-list class="transparent"
-                      v-for="item in items"
+              <v-list v-for="item in items"
                       :key="item.icon"
+                      class="transparent"
                       color="white"
                       flat
                       round>
@@ -143,10 +143,10 @@
 
                 >
                   <v-list-tile-action>
-                    <v-icon class="blue--text text--lighten-2">{{item.icon}}</v-icon>
+                    <v-icon class="blue--text text--lighten-2">{{ item.icon }}</v-icon>
                   </v-list-tile-action>
                   <v-list-tile-content>
-                    <v-list-tile-title>{{item.value}}</v-list-tile-title>
+                    <v-list-tile-title>{{ item.value }}</v-list-tile-title>
                   </v-list-tile-content>
                 </v-list-tile>
 
@@ -162,16 +162,15 @@
 </template>
 
 <script>
-  export default {
-
-    data () {
-      return {
-        items: [
-          {icon: 'phone', value: '999-999-9999'},
-          {icon: 'place', value: 'Québec, QC, Canada'},
-          {icon: 'email', value: 'chicoboymax@gmail.com'}
-        ]
-      }
+export default {
+  data() {
+    return {
+      items: [
+        { icon: "phone", value: "999-999-9999" },
+        { icon: "place", value: "Québec, QC, Canada" },
+        { icon: "email", value: "chicoboymax@gmail.com" }
+      ]
     }
   }
+}
 </script>
