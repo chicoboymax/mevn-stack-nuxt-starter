@@ -86,11 +86,9 @@ export default {
         { title: "Contact", path: "/contact", icon: "mail" }
       ],
       loggedInMenuItems: [
-        { title: "Sign In", path: "/api/signin", icon: "lock_open" }
+        { title: "Sign In", path: "/signin", icon: "lock_open" }
       ],
-      loggedOutMenuItems: [
-        { title: "Sign Out", path: "/api/logout", icon: "logout" }
-      ]
+      loggedOutMenuItems: [{ title: "Sign Out", path: "/", icon: "logout" }]
     }
   },
   methods: {
