@@ -25,7 +25,17 @@ module.exports = {
   plugins: ["~/plugins/vuetify.js"],
   css: ["~/assets/style/app.styl"],
 
-  modules: ["@nuxtjs/axios"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/proxy"],
+
+  axios: {
+    proxy: true // Can be also an object with default options
+  },
+
+  proxy: {
+    "/auth/google": "http://localhost:3000",
+    "/api/*": "http://localhost:3000"
+  },
+
   /*
   ** Customize the progress bar color
   */
@@ -34,7 +44,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ["~/plugins/vuetify.js", "~/plugins/axios.js"],
+    vendor: ["~/plugins/vuetify.js"],
     extractCSS: true,
     /*
     ** Run ESLint on save

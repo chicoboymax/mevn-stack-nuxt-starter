@@ -2,7 +2,7 @@
   <div>
     <v-navigation-drawer
       v-model="drawer"
-      fixed
+      temporary
       app
     >
       <v-list>
