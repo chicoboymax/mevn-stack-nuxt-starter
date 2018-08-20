@@ -1,7 +1,9 @@
 const express = require("express")
+const cors = require("cors")({ origin: true })
 const { Nuxt, Builder } = require("nuxt")
 
 const app = express()
+
 const host = process.env.HOST || "127.0.0.1"
 const port = process.env.PORT || 3000
 
@@ -41,7 +43,7 @@ async function start() {
     const builder = new Builder(nuxt)
     await builder.build()
   }
-
+  app.use(cors)
   // Give nuxt middleware to express
   app.use(nuxt.render)
 
