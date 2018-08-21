@@ -18,9 +18,11 @@
     "@nuxtjs/axios": "^5.0.0",
     "@nuxtjs/proxy": "^1.2.4",
     "cookie-session": "^2.0.0-beta.3",
+    "dotenv": "^6.0.0",
     "express": "^4.15.3",
     "mongoose": "^5.2.5",
     "nuxt": "^1.0.0",
+    "nuxt-stripe-module": "^2.0.0",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
     "vuetify": "^1.1.9"

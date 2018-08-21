@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   /*
   ** Headers of the page
@@ -25,7 +27,12 @@ module.exports = {
   plugins: ["~/plugins/vuetify.js"],
   css: ["~/assets/style/app.styl"],
 
-  modules: ["@nuxtjs/axios", "@nuxtjs/proxy"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/proxy", "nuxt-stripe-module"],
+
+  stripe: {
+    version: "v3",
+    publishableKey: "YOUR_STRIPE_PUBLISHABLE_KEY"
+  },
 
   axios: {
     proxy: true // Can be also an object with default options
@@ -34,6 +41,10 @@ module.exports = {
   proxy: {
     "/auth/google": "http://localhost:3000",
     "/api/*": "http://localhost:3000"
+  },
+
+  env: {
+    STRIPE_KEY: process.env.STRIPE_KEY || "pk_test_d2v1b7bw9kJC8R5x5m7UApEa"
   },
 
   /*
