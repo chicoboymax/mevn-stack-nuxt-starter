@@ -41,6 +41,7 @@
                 color="red"
                 class="white--text"
                 large
+                href="/auth/google"
               >
                 Sign in with Google
                 <v-icon right dark>phone</v-icon>
@@ -56,39 +57,7 @@
 <script>
 export default {
   data() {
-    return {
-      email: "",
-      password: "",
-      alert: false
-    }
-  },
-  computed: {
-    error() {
-      return this.$store.state.error
-    },
-    loading() {
-      return this.$store.state.loading
-    }
-  },
-  watch: {
-    error(value) {
-      if (value) {
-        this.alert = true
-      }
-    },
-    alert(value) {
-      if (!value) {
-        this.$store.commit("setError", null)
-      }
-    }
-  },
-  methods: {
-    userSignIn() {
-      this.$store.dispatch("userSignIn", {
-        email: this.email,
-        password: this.password
-      })
-    }
+    return {}
   }
 }
 </script>
