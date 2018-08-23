@@ -69,6 +69,7 @@
           {{ item.title }}
         </v-btn>
       </v-toolbar-items>
+
     </v-toolbar>
   </div>
 </template>
@@ -76,6 +77,7 @@
 <script>
 export default {
   name: "TheHeader",
+
   data() {
     return {
       appTitle: "MEVN stack starter",

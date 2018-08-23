@@ -24,15 +24,14 @@ module.exports = {
       }
     ]
   },
-  plugins: ["~/plugins/vuetify.js"],
+  plugins: [
+    "~/plugins/vuetify.js",
+    "~/plugins/vueReact.js",
+    "~/plugins/stripeCheckout.js"
+  ],
   css: ["~/assets/style/app.styl"],
 
-  modules: ["@nuxtjs/axios", "@nuxtjs/proxy", "nuxt-stripe-module"],
-
-  stripe: {
-    version: "v3",
-    publishableKey: "YOUR_STRIPE_PUBLISHABLE_KEY"
-  },
+  modules: ["@nuxtjs/axios", "@nuxtjs/proxy"],
 
   axios: {
     proxy: true // Can be also an object with default options
