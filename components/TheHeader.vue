@@ -68,16 +68,18 @@
           <v-icon left color="blue">{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
-      </v-toolbar-items>
 
+      </v-toolbar-items>
+      <TheStripeCheckout/>
     </v-toolbar>
   </div>
 </template>
 
 <script>
+import TheStripeCheckout from "@/components/TheStripeCheckout"
 export default {
   name: "TheHeader",
-
+  components: { TheStripeCheckout },
   data() {
     return {
       appTitle: "MEVN stack starter",
