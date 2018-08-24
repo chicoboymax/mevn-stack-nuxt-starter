@@ -15,6 +15,7 @@ module.exports = {
         content: "Nuxt.js + Vuetify.js project"
       }
     ],
+    script: [{ src: "https://checkout.stripe.com/checkout.js", body: true }],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
@@ -24,11 +25,7 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    "~/plugins/vuetify.js",
-    "~/plugins/vueReact.js",
-    "~/plugins/stripeCheckout.js"
-  ],
+  plugins: ["~/plugins/vuetify.js"],
   css: ["~/assets/style/app.styl"],
 
   modules: ["@nuxtjs/axios", "@nuxtjs/proxy"],

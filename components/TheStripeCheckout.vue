@@ -1,41 +1,42 @@
 <!--suppress ALL -->
 <template>
-  <StripeCheckout
-    :stripe-key="stripeKey"
-    name="MEVN stack starter"
-    description="$5 for 5 credits"
-    image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
-    panel-label="Give Money"
-    amount="500"
-    currency="USD"
-    locale="en"
-    email="chicoboymax@gmail.com"
-    zip-code="{false}"
-    allow-remember-me
-    token="{this.onToken}"
-    opened="{this.onOpened}"
-    closed="{this.onClosed}"
-    reconfigure-on-update="{false}"
-    trigger-event="onTouchTap"
-    component-class="div"
-    label="Buy credits">
-    <!--<v-btn class="btn" flat>Buy credits</v-btn>-->
+  <v-btn id="customButton" round color="primary" @click="openForm">Buy credits</v-btn>
+</template>¶
 
-  </StripeCheckout>
-</template>
-
-    <script>
+<script>
 export default {
   data() {
     return { stripeKey: process.env.STRIPE_KEY }
   },
-  method: {
+  mounted() {
+    this.handler = window.StripeCheckout.configure({
+      key: this.stripeKey,
+      image:
+        "https://cdn.icon-icons.com/icons2/1369/PNG/512/-whatshot_90079.png",
+      locale: "auto",
+      token: function(token) {
+        console.log(token)
+      }
+    })
+  },
+  methods: {
     onToken(token) {
       console.log(token)
+    },
+    openForm() {
+      this.handler.open({
+        name: "MEVN stack starter",
+        description: "$5 for 5 credits !",
+        currency: "USD",
+        amount: 500,
+        token: token => {
+          console.log(token)
+        }
+      })
     }
   }
 }
 </script>
 
-    <style>
+<style>
 </style>
