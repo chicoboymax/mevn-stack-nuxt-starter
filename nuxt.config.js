@@ -28,7 +28,7 @@ module.exports = {
   plugins: ["~/plugins/vuetify.js"],
   css: ["~/assets/style/app.styl"],
 
-  modules: ["@nuxtjs/axios", "@nuxtjs/proxy"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/proxy", "@nuxtjs/font-awesome"],
 
   axios: {
     proxy: true // Can be also an object with default options

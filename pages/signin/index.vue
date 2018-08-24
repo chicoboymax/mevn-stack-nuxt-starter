@@ -43,8 +43,10 @@
                 large
                 href="/auth/google"
               >
+                <v-icon class="fa fa-google" left/>
                 Sign in with Google
-                <v-icon right dark>phone</v-icon>
+
+
               </v-btn>
             </v-flex>
           </v-layout>
