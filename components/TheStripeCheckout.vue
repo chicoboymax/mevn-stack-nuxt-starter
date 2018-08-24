@@ -13,10 +13,7 @@ export default {
       key: this.stripeKey,
       image:
         "https://cdn.icon-icons.com/icons2/1369/PNG/512/-whatshot_90079.png",
-      locale: "auto",
-      token: function(token) {
-        console.log(token)
-      }
+      locale: "auto"
     })
   },
   methods: {
@@ -30,6 +27,7 @@ export default {
         currency: "USD",
         amount: 500,
         token: token => {
+          this.$store.dispatch("handleToken", token)
           console.log(token)
         }
       })

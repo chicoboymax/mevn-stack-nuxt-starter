@@ -68,9 +68,9 @@
           <v-icon left color="blue">{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
-
+        <TheStripeCheckout/>
       </v-toolbar-items>
-      <TheStripeCheckout/>
+
     </v-toolbar>
   </div>
 </template>

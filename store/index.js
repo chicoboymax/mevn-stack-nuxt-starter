@@ -19,5 +19,10 @@ export const actions = {
   async logout({ commit }) {
     const { data } = await this.$axios.get("/api/logout")
     if (data.ok) commit("SET_USER", null)
+  },
+
+  async handleToken({ commit }, token) {
+    const res = await this.$axios.post("/api/stripe", token)
+    if (res.ok) commit("SET_USER", res.data)
   }
 }
