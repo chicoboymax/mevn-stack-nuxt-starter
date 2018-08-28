@@ -32,17 +32,16 @@
         </router-link>
       </v-toolbar-title>
 
+
+
+
       <v-spacer/>
 
-      <v-badge v-if="$store.state.authUser"
-               v-model="show"
-               color="blue"
-      >
-        Credits
-        <span slot="badge"> {{ credits }}</span>
-      </v-badge>
 
-      <TheStripeCheckout v-if="$store.state.authUser" />
+      <v-flex v-if="$store.state.authUser" right>
+        <TheStripeCheckout />
+        <span >Credits: {{ credits }}</span>
+      </v-flex>
 
 
       <v-toolbar-items class="hidden-xs-only">
@@ -106,8 +105,12 @@ export default {
       loggedInMenuItems: [
         { title: "Sign In", path: "/signin", icon: "lock_open" }
       ],
-      loggedOutMenuItems: [{ title: "Sign Out", path: "/", icon: "logout" }],
-      credits: this.$store.credits || 0
+      loggedOutMenuItems: [{ title: "Sign Out", path: "/", icon: "logout" }]
+    }
+  },
+  computed: {
+    credits: function() {
+      return this.$store.state.authUser.credits
     }
   },
   methods: {
