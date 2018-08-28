@@ -1,6 +1,5 @@
 export const state = () => ({
-  authUser: null,
-  credits: null
+  authUser: null
 })
 
 /* eslint no-shadow: ["error", { "allow": ["state"] }] */
