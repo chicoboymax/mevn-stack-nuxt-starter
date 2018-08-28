@@ -24,6 +24,6 @@ export const actions = {
 
   async handleToken({ commit }, token) {
     const res = await this.$axios.post("/api/stripe", token)
-    if (res) commit("SET_USER", res.data)
+    commit("SET_USER", res.data)
   }
 }
