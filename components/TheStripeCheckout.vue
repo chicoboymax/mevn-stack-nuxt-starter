@@ -1,6 +1,6 @@
 <!--suppress ALL -->
 <template>
-  <v-btn id="customButton" round color="primary" @click="openForm">Buy credits</v-btn>
+  <v-btn id="customButton" color="primary" round @click="openForm">Buy credits</v-btn>
 </template>¶
 
 <script>
@@ -17,9 +17,6 @@ export default {
     })
   },
   methods: {
-    onToken(token) {
-      console.log(token)
-    },
     openForm() {
       this.handler.open({
         name: "MEVN stack starter",
@@ -28,7 +25,6 @@ export default {
         amount: 500,
         token: token => {
           this.$store.dispatch("handleToken", token)
-          console.log(token)
         }
       })
     }

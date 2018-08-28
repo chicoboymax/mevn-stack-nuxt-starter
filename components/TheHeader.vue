@@ -32,6 +32,7 @@
         </router-link>
       </v-toolbar-title>
       <v-spacer/>
+      <TheStripeCheckout v-if="$store.state.authUser" />
       <v-toolbar-items class="hidden-xs-only">
         <v-btn
           v-for="item in menuItems"
@@ -68,7 +69,7 @@
           <v-icon left color="blue">{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
-        <TheStripeCheckout/>
+
       </v-toolbar-items>
 
     </v-toolbar>
