@@ -1,5 +1,6 @@
 export const state = () => ({
-  authUser: null
+  authUser: null,
+  credits: null
 })
 
 /* eslint no-shadow: ["error", { "allow": ["state"] }] */
@@ -23,6 +24,6 @@ export const actions = {
 
   async handleToken({ commit }, token) {
     const res = await this.$axios.post("/api/stripe", token)
-    if (res.ok) commit("SET_USER", res.data)
+    if (res) commit("SET_USER", res.data)
   }
 }

@@ -31,9 +31,22 @@
           {{ appTitle }}
         </router-link>
       </v-toolbar-title>
+
       <v-spacer/>
+
+      <v-badge v-if="$store.state.authUser"
+               v-model="show"
+               color="blue"
+      >
+        Credits
+        <span slot="badge"> {{ credits }}</span>
+      </v-badge>
+
       <TheStripeCheckout v-if="$store.state.authUser" />
+
+
       <v-toolbar-items class="hidden-xs-only">
+
         <v-btn
           v-for="item in menuItems"
           :key="item.title"
@@ -93,7 +106,8 @@ export default {
       loggedInMenuItems: [
         { title: "Sign In", path: "/signin", icon: "lock_open" }
       ],
-      loggedOutMenuItems: [{ title: "Sign Out", path: "/", icon: "logout" }]
+      loggedOutMenuItems: [{ title: "Sign Out", path: "/", icon: "logout" }],
+      credits: this.$store.credits || 0
     }
   },
   methods: {
