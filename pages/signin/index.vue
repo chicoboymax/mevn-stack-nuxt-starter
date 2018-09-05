@@ -1,57 +1,41 @@
 <template>
-  <v-container fluid>
-    <v-layout row wrap>
-      <v-flex xs12 class="text-xs-center" mt-5>
-        <h1>Sign In</h1>
+  <v-container grid-list-xl>
+    <v-layout align-center justify-center fill-height>
+      <v-flex xs2 text-xs-center>
+        <v-btn
+          color="#3B5998"
+          class="white--text social-button"
+          large
+          href="/auth/facebook"
+        >
+          <v-icon class="fa fa-facebook" left/>
+          Sign in with Facebook
+
+        </v-btn>
+
+        <v-btn
+          color="#1DA1F2"
+          class="white--text social-button"
+          large
+          href="/auth/twitter"
+        >
+          <v-icon class="fa fa-twitter" left/>
+          Sign in with Twitter
+
+        </v-btn>
+
+        <v-btn
+          color="#DB4437"
+          class="white--text social-button"
+          large
+          href="/auth/google"
+        >
+          <v-icon class="fa fa-google" left/>
+          Sign in with Google
+
+        </v-btn>
       </v-flex>
-      <v-flex xs12 sm6 offset-sm3 mt-3>
-        <form @submit.prevent="userSignIn">
-          <v-layout column>
-            <v-flex>
-              <v-alert v-model="alert" type="error" dismissible>
-                {{ error }}
-              </v-alert>
-            </v-flex>
-            <v-flex>
-              <v-text-field
-                id="email"
-                v-model="email"
-                name="email"
-                label="Email"
-                type="email"
-                required/>
-            </v-flex>
-            <v-flex>
-              <v-text-field
-                id="password"
-                v-model="password"
-                name="password"
-                label="Password"
-                type="password"
-                required/>
-            </v-flex>
-            <v-flex class="text-xs-center" mt-5>
-              <v-btn color="primary" type="submit" large>Sign In</v-btn>
 
-
-            </v-flex>
-            <v-flex class="text-xs-center" mt-5>
-
-              <v-btn
-                color="red"
-                class="white--text"
-                large
-                href="/auth/google"
-              >
-                <v-icon class="fa fa-google" left/>
-                Sign in with Google
-
-
-              </v-btn>
-            </v-flex>
-          </v-layout>
-        </form>
-      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -63,3 +47,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.social-button {
+  /*width: 500px;*/
+}
+</style>
