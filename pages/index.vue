@@ -14,7 +14,7 @@
               using Google OAuth, Express, Mongo, Nuxt.
             </blockquote>
           </v-flex>
-          <v-flex v-if="$store.state.authUser" xs12 sm6 offset-sm3 mt-3 class="text-xs-center" mt-5>
+          <v-flex v-if="!$store.state.authUser" xs12 sm6 offset-sm3 mt-3 class="text-xs-center" mt-5>
             <v-btn to="/signin">Sign In</v-btn>
           </v-flex>
         </v-layout>
