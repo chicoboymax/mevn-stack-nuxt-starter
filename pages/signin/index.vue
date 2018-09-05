@@ -1,6 +1,6 @@
 <template>
   <v-container grid-list-xl>
-    <v-layout align-center justify-center fill-height>
+    <v-layout align-center justify-center justify-end fill-height>
       <v-flex xs2 text-xs-center>
         <v-btn
           color="#3B5998"
